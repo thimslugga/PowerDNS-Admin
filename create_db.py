@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
-from migrate.versioning import api
-from config import SQLALCHEMY_DATABASE_URI
-from config import SQLALCHEMY_MIGRATE_REPO
-from app import db
-from app.models import Role, Setting
 import os.path
 import time
 import sys
+
+from migrate.versioning import api
+from config import SQLALCHEMY_DATABASE_URI
+from config import SQLALCHEMY_MIGRATE_REPO
+from pdnsadmin import db
+from pdnsadmin.models import Role, Setting
+
 
 def start():
     wait_time = get_waittime_from_env()
